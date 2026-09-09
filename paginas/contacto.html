@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Saludame Po</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../estilos/style.css">
+</head>
+<body>
+
+    <header id="header"></header>
+
+    <main class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-6">
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="title is-3 has-text-centered has-text-danger">Contáctanos</h2>
+                            <p class="has-text-centered mb-5">¿Tienes dudas o quieres postularte como famoso? Déjanos un mensaje.</p>
+
+                            <form onsubmit="event.preventDefault(); alert('¡Mensaje enviado con éxito po!');">
+                                <div class="field">
+                                    <label class="label">Nombre Completo</label>
+                                    <div class="control">
+                                        <input class="input" type="text" id="nombreContacto" placeholder="Ej: Maria Lopez" required>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">Correo Electrónico</label>
+                                    <div class="control">
+                                        <input class="input" type="email" id="correoContacto" placeholder="usuario@duoc.cl" required>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">Mensaje</label>
+                                    <div class="control">
+                                        <textarea class="textarea" placeholder="Escribe tu consulta aquí..." required></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="field mt-5">
+                                    <button type="submit" class="button is-danger is-fullwidth">Enviar Mensaje</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script src="../scripts/header-footer.js"></script>
+    <script src="../scripts/validaciones.js"></script>
+</body>
+</html>

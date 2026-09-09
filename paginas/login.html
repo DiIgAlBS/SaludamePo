@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Saludame Po</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../estilos/style.css">
+</head>
+<body>
+
+    <header id="header"></header>
+
+    <main class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-5">
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="title is-3 has-text-centered has-text-danger">Iniciar Sesión</h2>
+                            
+                            <form onsubmit="event.preventDefault(); alert('¡Sesión iniciada correctamente!'); window.location.href='../index.html';">
+                                <div class="field">
+                                    <label class="label">Correo Electrónico</label>
+                                    <div class="control">
+                                        <input class="input" type="email" id="correoLogin" placeholder="usuario@duoc.cl" required>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">Contraseña</label>
+                                    <div class="control">
+                                        <input class="input" type="password" placeholder="••••••••" required>
+                                    </div>
+                                </div>
+
+                                <div class="field mt-5">
+                                    <button type="submit" class="button is-danger is-fullwidth">Entrar</button>
+                                </div>
+
+                                <p class="has-text-centered mt-4 is-size-7">
+                                    ¿No tienes cuenta? <a href="registro.html" class="has-text-danger">Regístrate aquí</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script src="../scripts/header-footer.js"></script>
+</body>
+</html>

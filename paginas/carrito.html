@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - Saludame Po</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../estilos/style.css">
+</head>
+<body>
+
+    <header id="header"></header>
+
+    <main class="section">
+        <div class="container">
+            <h2 class="title is-2 mb-5">Tu Carrito de Saludos</h2>
+
+            <div class="columns">
+                <div class="column is-8">
+                    <div class="table-container">
+                        <table class="table is-fullwidth is-striped is-hoverable">
+                            <thead>
+                                <tr>
+                                    <th>Famoso / Personaje</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Subtotal</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabla-carrito">
+                                <!-- Se inyecta desde productos.js -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <button onclick="vaciarCarrito()" class="button is-warning is-light">Vaciar Carrito</button>
+                </div>
+
+                <div class="column is-4">
+                    <div class="box">
+                        <h3 class="title is-4">Resumen del Pedido</h3>
+                        <div class="is-flex justify-content-space-between mb-3">
+                            <span class="is-size-5">Total a Pagar:</span>
+                            <span id="total-carrito" class="title is-4 text-price">$0 CLP</span>
+                        </div>
+                        <button onclick="alert('¡Gracias por tu compra! Tu pedido fue procesado.')" class="button is-danger is-fullwidth is-medium">
+                            Pagar Ahora
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script src="../scripts/header-footer.js"></script>
+    <script src="../scripts/productos.js"></script>
+</body>
+</html>

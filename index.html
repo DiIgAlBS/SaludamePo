@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saludame Po - Saludos de Famosos</title>
+    <!-- Framework Bulma CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="estilos/style.css">
+</head>
+<body>
+
+    <!-- Header dinámico -->
+    <header id="header"></header>
+
+    <main>
+        <!-- Banner Principal (Hero) -->
+        <section class="hero is-danger is-bold">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="title is-1">¡Pide tu saludo personalizado!</h1>
+                    <h2 class="subtitle">Sorprende con videos exclusivos de tus actores de doblaje y famosos favoritos.</h2>
+                    <a href="paginas/productos.html" class="button is-warning is-medium">Ver Catálogo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secciones de Productos Populares -->
+        <section class="section">
+            <div class="container">
+                <h3 class="title is-3 has-text-centered mb-5">Saludos Más Populares</h3>
+                
+                <div class="columns is-multiline">
+                    
+                    <!-- Tarjeta 1 -->
+                    <div class="column is-12-mobile is-6-tablet is-3-desktop">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="https://via.placeholder.com/300x200?text=Mario+Casta%C3%B1eda" alt="Mario Castañeda">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <p class="title is-5">Mario Castañeda</p>
+                                <p class="subtitle is-6">Voz de Goku</p>
+                                <p class="text-price">$25.000 CLP</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="paginas/detalle-producto.html" class="card-footer-item has-text-danger">Ver Detalle</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 2 -->
+                    <div class="column is-12-mobile is-6-tablet is-3-desktop">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="https://via.placeholder.com/300x200?text=Stefan+Kramer" alt="Stefan Kramer">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <p class="title is-5">Stefan Kramer</p>
+                                <p class="subtitle is-6">Imitador Nacional</p>
+                                <p class="text-price">$30.000 CLP</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="paginas/detalle-producto.html" class="card-footer-item has-text-danger">Ver Detalle</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 3 -->
+                    <div class="column is-12-mobile is-6-tablet is-3-desktop">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="https://via.placeholder.com/300x200?text=Ren%C3%A9+Garc%C3%ADa" alt="René García">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <p class="title is-5">René García</p>
+                                <p class="subtitle is-6">Voz de Vegeta</p>
+                                <p class="text-price">$25.000 CLP</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="paginas/detalle-producto.html" class="card-footer-item has-text-danger">Ver Detalle</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 4 -->
+                    <div class="column is-12-mobile is-6-tablet is-3-desktop">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="https://via.placeholder.com/300x200?text=Personaje+Animado" alt="Personaje Animado">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <p class="title is-5">Personaje Animado</p>
+                                <p class="subtitle is-6">Animación 3D</p>
+                                <p class="text-price">$18.000 CLP</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="paginas/detalle-producto.html" class="card-footer-item has-text-danger">Ver Detalle</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Video de muestra -->
+        <section class="section has-background-light">
+            <div class="container has-text-centered">
+                <h4 class="title is-4">Ejemplo de Saludo en Video</h4>
+                <div class="columns is-centered">
+                    <div class="column is-8">
+                        <figure class="image is-16by9">
+                            <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/L_LUpnjgPso" frameborder="0" allowfullscreen></iframe>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer dinámico -->
+    <footer id="footer"></footer>
+
+    <!-- Script de Inyección -->
+    <script src="scripts/header-footer.js"></script>
+</body>
+</html>

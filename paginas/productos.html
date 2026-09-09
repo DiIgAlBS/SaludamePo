@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Saludame Po</title>
+    <!-- Bulma CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Estilos Propios -->
+    <link rel="stylesheet" href="../estilos/style.css">
+</head>
+<body>
+
+    <!-- Header dinámico -->
+    <header id="header"></header>
+
+    <main class="section">
+        <div class="container">
+            <h2 class="title is-2 is-spaced has-text-centered">Catálogo de Saludos</h2>
+            <p class="subtitle is-5 has-text-centered mb-6">Elige a tu famoso o actor de doblaje favorito y encarga tu saludo personalizado.</p>
+
+            <!-- Grilla dinámica alimentada desde productos.js -->
+            <div id="contenedor-productos" class="columns is-multiline">
+                <!-- Se inyectan las tarjetas desde JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer dinámico -->
+    <footer id="footer"></footer>
+
+    <!-- Scripts del Proyecto -->
+    <script src="../scripts/header-footer.js"></script>
+    <script src="../scripts/productos.js"></script>
+</body>
+</html>

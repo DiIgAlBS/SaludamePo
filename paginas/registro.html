@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Saludame Po</title>
+    <!-- Bulma CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Estilos Propios -->
+    <link rel="stylesheet" href="../estilos/style.css">
+</head>
+<body>
+
+    <!-- Header dinámico -->
+    <header id="header"></header>
+
+    <main class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-6">
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="title is-3 has-text-centered has-text-danger">Registro de Usuario</h2>
+                            
+                            <form onsubmit="return validarFormularioRegistro(event)">
+                                <!-- Nombre -->
+                                <div class="field">
+                                    <label class="label">Nombre</label>
+                                    <div class="control">
+                                        <input class="input" type="text" id="nombre" placeholder="Ej: Juan">
+                                    </div>
+                                </div>
+
+                                <!-- Apellido -->
+                                <div class="field">
+                                    <label class="label">Apellido</label>
+                                    <div class="control">
+                                        <input class="input" type="text" id="apellido" placeholder="Ej: Pérez">
+                                    </div>
+                                </div>
+
+                                <!-- RUT -->
+                                <div class="field">
+                                    <label class="label">RUT (Sin puntos ni guión)</label>
+                                    <div class="control">
+                                        <input class="input" type="text" id="rut" placeholder="Ej: 19011022K">
+                                    </div>
+                                </div>
+
+                                <!-- Correo -->
+                                <div class="field">
+                                    <label class="label">Correo Electrónico</label>
+                                    <div class="control">
+                                        <input class="input" type="text" id="correo" placeholder="usuario@duoc.cl o @gmail.com">
+                                    </div>
+                                </div>
+
+                                <!-- Fecha de Nacimiento -->
+                                <div class="field">
+                                    <label class="label">Fecha de Nacimiento</label>
+                                    <div class="control">
+                                        <input class="input" type="date" id="fechaNacimiento">
+                                    </div>
+                                </div>
+
+                                <!-- Región -->
+                                <div class="field">
+                                    <label class="label">Región</label>
+                                    <div class="control">
+                                        <div class="select is-fullwidth">
+                                            <select id="region" onchange="cargarComunas()">
+                                                <option value="">Seleccione una región</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Comuna -->
+                                <div class="field">
+                                    <label class="label">Comuna</label>
+                                    <div class="control">
+                                        <div class="select is-fullwidth">
+                                            <select id="comuna">
+                                                <option value="">Seleccione primero una región</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Botón de Enviar -->
+                                <div class="field mt-5">
+                                    <button type="submit" class="button is-danger is-fullwidth">Registrarse</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer dinámico -->
+    <footer id="footer"></footer>
+
+    <!-- Scripts -->
+    <script src="../scripts/header-footer.js"></script>
+    <script src="../scripts/validaciones.js"></script>
+    <script src="../scripts/header-footer.js"></script>
+    <script src="../scripts/validaciones.js"></script>
+    <script src="../scripts/regiones.js"></script>
+</body>
+</html>
