@@ -4,68 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro - Saludame Po</title>
-    <!-- Bulma CSS CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <!-- Estilos Propios -->
     <link rel="stylesheet" href="../estilos/style.css">
 </head>
 <body>
 
-    <!-- Header dinámico -->
     <header id="header"></header>
 
     <main class="section">
         <div class="container">
             <div class="columns is-centered">
-                <div class="column is-6">
+                <div class="column is-6-desktop is-8-tablet">
                     <div class="card">
                         <div class="card-content">
                             <h2 class="title is-3 has-text-centered has-text-danger">Registro de Usuario</h2>
                             
-                            <form onsubmit="return validarFormularioRegistro(event)">
+                            <form id="formRegistro" novalidate>
                                 <!-- Nombre -->
                                 <div class="field">
-                                    <label class="label">Nombre</label>
+                                    <label class="label">Nombre (*)</label>
                                     <div class="control">
                                         <input class="input" type="text" id="nombre" placeholder="Ej: Juan">
                                     </div>
+                                    <p class="help is-danger" id="errNombre"></p>
                                 </div>
 
                                 <!-- Apellido -->
                                 <div class="field">
-                                    <label class="label">Apellido</label>
+                                    <label class="label">Apellido (*)</label>
                                     <div class="control">
                                         <input class="input" type="text" id="apellido" placeholder="Ej: Pérez">
                                     </div>
+                                    <p class="help is-danger" id="errApellido"></p>
                                 </div>
 
                                 <!-- RUT -->
                                 <div class="field">
-                                    <label class="label">RUT (Sin puntos ni guión)</label>
+                                    <label class="label">RUT (Sin puntos ni guión) (*)</label>
                                     <div class="control">
-                                        <input class="input" type="text" id="rut" placeholder="Ej: 19011022K">
+                                        <input class="input" type="text" id="rut" placeholder="Ej: 19011022K" maxlength="9">
                                     </div>
+                                    <p class="help is-danger" id="errRut"></p>
                                 </div>
 
                                 <!-- Correo -->
                                 <div class="field">
-                                    <label class="label">Correo Electrónico</label>
+                                    <label class="label">Correo Electrónico (*)</label>
                                     <div class="control">
-                                        <input class="input" type="text" id="correo" placeholder="usuario@duoc.cl o @gmail.com">
+                                        <input class="input" type="email" id="correo" placeholder="usuario@duoc.cl o @gmail.com">
                                     </div>
+                                    <p class="help is-danger" id="errCorreo"></p>
                                 </div>
 
                                 <!-- Fecha de Nacimiento -->
                                 <div class="field">
-                                    <label class="label">Fecha de Nacimiento</label>
+                                    <label class="label">Fecha de Nacimiento (*)</label>
                                     <div class="control">
                                         <input class="input" type="date" id="fechaNacimiento">
                                     </div>
+                                    <p class="help is-danger" id="errFechaNacimiento"></p>
                                 </div>
 
                                 <!-- Región -->
                                 <div class="field">
-                                    <label class="label">Región</label>
+                                    <label class="label">Región (*)</label>
                                     <div class="control">
                                         <div class="select is-fullwidth">
                                             <select id="region" onchange="cargarComunas()">
@@ -73,16 +75,40 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <p class="help is-danger" id="errRegion"></p>
                                 </div>
 
                                 <!-- Comuna -->
                                 <div class="field">
-                                    <label class="label">Comuna</label>
+                                    <label class="label">Comuna (*)</label>
                                     <div class="control">
                                         <div class="select is-fullwidth">
                                             <select id="comuna">
                                                 <option value="">Seleccione primero una región</option>
                                             </select>
+                                        </div>
+                                    </div>
+                                    <p class="help is-danger" id="errComuna"></p>
+                                </div>
+
+                                <!-- Contraseñas (Agregadas para completar el flujo) -->
+                                <div class="columns">
+                                    <div class="column is-6">
+                                        <div class="field">
+                                            <label class="label">Contraseña (*)</label>
+                                            <div class="control">
+                                                <input class="input" type="password" id="clave" placeholder="4 a 10 caracteres">
+                                            </div>
+                                            <p class="help is-danger" id="errClave"></p>
+                                        </div>
+                                    </div>
+                                    <div class="column is-6">
+                                        <div class="field">
+                                            <label class="label">Confirmar Contraseña (*)</label>
+                                            <div class="control">
+                                                <input class="input" type="password" id="claveConfirm" placeholder="Repite tu contraseña">
+                                            </div>
+                                            <p class="help is-danger" id="errClaveConfirm"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -91,6 +117,10 @@
                                 <div class="field mt-5">
                                     <button type="submit" class="button is-danger is-fullwidth">Registrarse</button>
                                 </div>
+
+                                <p class="has-text-centered mt-4 is-size-7">
+                                    ¿Ya tienes cuenta? <a href="login.html" class="has-text-danger">Inicia Sesión aquí</a>
+                                </p>
                             </form>
 
                         </div>
@@ -100,14 +130,11 @@
         </div>
     </main>
 
-    <!-- Footer dinámico -->
     <footer id="footer"></footer>
 
-    <!-- Scripts -->
+    <!-- Scripts limpios -->
     <script src="../scripts/header-footer.js"></script>
-    <script src="../scripts/validaciones.js"></script>
-    <script src="../scripts/header-footer.js"></script>
-    <script src="../scripts/validaciones.js"></script>
     <script src="../scripts/regiones.js"></script>
+    <script src="../scripts/validaciones.js"></script>
 </body>
 </html>

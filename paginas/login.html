@@ -14,24 +14,27 @@
     <main class="section">
         <div class="container">
             <div class="columns is-centered">
-                <div class="column is-5">
+                <div class="column is-4-desktop is-6-tablet">
                     <div class="card">
                         <div class="card-content">
                             <h2 class="title is-3 has-text-centered has-text-danger">Iniciar Sesión</h2>
-                            
-                            <form onsubmit="event.preventDefault(); alert('¡Sesión iniciada correctamente!'); window.location.href='../index.html';">
+                            <p class="has-text-centered mb-5">Ingresa a tu cuenta para solicitar tus saludos.</p>
+
+                            <form id="formLogin" novalidate>
                                 <div class="field">
-                                    <label class="label">Correo Electrónico</label>
+                                    <label class="label">Correo Electrónico (*)</label>
                                     <div class="control">
-                                        <input class="input" type="email" id="correoLogin" placeholder="usuario@duoc.cl" required>
+                                        <input class="input" type="email" id="correoLogin" placeholder="usuario@duoc.cl">
                                     </div>
+                                    <p class="help is-danger" id="errCorreoLogin"></p>
                                 </div>
 
                                 <div class="field">
-                                    <label class="label">Contraseña</label>
+                                    <label class="label">Contraseña (*)</label>
                                     <div class="control">
-                                        <input class="input" type="password" placeholder="••••••••" required>
+                                        <input class="input" type="password" id="claveLogin" placeholder="••••••••">
                                     </div>
+                                    <p class="help is-danger" id="errClaveLogin"></p>
                                 </div>
 
                                 <div class="field mt-5">
@@ -52,5 +55,6 @@
     <footer id="footer"></footer>
 
     <script src="../scripts/header-footer.js"></script>
+    <script src="../scripts/login.js"></script>
 </body>
 </html>

@@ -1,28 +1,51 @@
+function cerrarSesion() {
+    localStorage.removeItem('usuarioLogueado');
+    window.location.reload();
+}
+
 function inyectarHeader() {
     const headerElement = document.getElementById("header");
     if (!headerElement) return;
 
-    // Evaluamos si estamos dentro de la subcarpeta /paginas/
     const esSubcarpeta = window.location.pathname.includes("/paginas/");
-    
-    // Si estamos en /paginas/, el Home es "../index.html" y las otras páginas son directas ("nosotros.html")
-    // Si estamos en la raíz, el Home es "index.html" y las páginas son "paginas/nosotros.html"
     const rutaHome = esSubcarpeta ? "../index.html" : "index.html";
     const rutaPagina = esSubcarpeta ? "" : "paginas/";
+
+    // Verificar si hay sesión activa en localStorage
+    const usuarioActivo = JSON.parse(localStorage.getItem('usuarioLogueado'));
+
+    // Generar botones según la sesión
+    let botonesAuth = '';
+    if (usuarioActivo) {
+        botonesAuth = `
+            <span class="navbar-item has-text-weight-bold has-text-white">
+                👋 Hola, ${usuarioActivo.nombre}
+            </span>
+            <button class="button is-dark is-outlined" onclick="cerrarSesion()">
+                Cerrar Sesión
+            </button>
+        `;
+    } else {
+        botonesAuth = `
+            <a class="button is-light" href="${rutaPagina}login.html">
+                Iniciar Sesión
+            </a>
+        `;
+    }
 
     headerElement.innerHTML = `
         <nav class="navbar is-danger" role="navigation" aria-label="main navigation">
             <div class="container">
                 <div class="navbar-brand">
                     <a class="navbar-item has-text-weight-bold is-size-4" href="${rutaHome}">
-                         Saludame Po
+                        Saludame Po
                     </a>
                 </div>
 
                 <div class="navbar-menu is-active">
                     <div class="navbar-start">
                         <a class="navbar-item" href="${rutaHome}">Home</a>
-                        <a class="navbar-item" href="${rutaPagina}productos.html">Catalogo</a>
+                        <a class="navbar-item" href="${rutaPagina}productos.html">Catálogo</a>
                         <a class="navbar-item" href="${rutaPagina}nosotros.html">Nosotros</a>
                         <a class="navbar-item" href="${rutaPagina}blogs.html">Blogs</a>
                         <a class="navbar-item" href="${rutaPagina}contacto.html">Contacto</a>
@@ -31,9 +54,7 @@ function inyectarHeader() {
                     <div class="navbar-end">
                         <div class="navbar-item">
                             <div class="buttons">
-                                <a class="button is-light" href="${rutaPagina}login.html">
-                                    Iniciar Sesión
-                                </a>
+                                ${botonesAuth}
                                 <a class="button is-warning" href="${rutaPagina}carrito.html">
                                     🛒 Cart (<span id="cart-count">0</span>)
                                 </a>
