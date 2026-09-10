@@ -5,6 +5,9 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+
+    background: linear-gradient(135deg, #fff0f3 0%, #f7fafc 50%, #edf2f7 100%);
+    background-attachment: fixed; 
 }
 
 main {
@@ -15,13 +18,24 @@ main {
     border: 2px solid red !important;
 }
 
-.card-image img {
-    height: 200px;
-    object-fit: cover;
-}
-
 .text-price {
     font-size: 1.2rem;
     font-weight: bold;
     color: #e53935;
+}
+
+.card-image {
+    height: 200px; 
+    overflow: hidden;
+    background-color: #f5f5f5; 
+}
+
+.card-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover; 
+}
+
+.card, .box {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
 }
