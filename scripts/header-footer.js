@@ -22,7 +22,7 @@ function inyectarHeader() {
                 <div class="navbar-menu is-active">
                     <div class="navbar-start">
                         <a class="navbar-item" href="${rutaHome}">Home</a>
-                        <a class="navbar-item" href="${rutaPagina}productos.html">Productos</a>
+                        <a class="navbar-item" href="${rutaPagina}productos.html">Catalogo</a>
                         <a class="navbar-item" href="${rutaPagina}nosotros.html">Nosotros</a>
                         <a class="navbar-item" href="${rutaPagina}blogs.html">Blogs</a>
                         <a class="navbar-item" href="${rutaPagina}contacto.html">Contacto</a>
