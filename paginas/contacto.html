@@ -20,26 +20,29 @@
                             <h2 class="title is-3 has-text-centered has-text-danger">Contáctanos</h2>
                             <p class="has-text-centered mb-5">¿Tienes dudas o quieres postularte como famoso? Déjanos un mensaje.</p>
 
-                            <form onsubmit="event.preventDefault(); alert('¡Mensaje enviado con éxito po!');">
+                            <form id="formContacto" novalidate>
                                 <div class="field">
-                                    <label class="label">Nombre Completo</label>
+                                    <label class="label">Nombre Completo (*)</label>
                                     <div class="control">
-                                        <input class="input" type="text" id="nombreContacto" placeholder="Ej: Maria Lopez" required>
+                                        <input class="input" type="text" id="nombreContacto" maxlength="100" placeholder="Ej: Maria Lopez">
                                     </div>
+                                    <p class="help is-danger" id="errNombreContacto"></p>
                                 </div>
 
                                 <div class="field">
-                                    <label class="label">Correo Electrónico</label>
+                                    <label class="label">Correo Electrónico (*)</label>
                                     <div class="control">
-                                        <input class="input" type="email" id="correoContacto" placeholder="usuario@duoc.cl" required>
+                                        <input class="input" type="email" id="correoContacto" maxlength="100" placeholder="usuario@duoc.cl">
                                     </div>
+                                    <p class="help is-danger" id="errCorreoContacto"></p>
                                 </div>
 
                                 <div class="field">
-                                    <label class="label">Mensaje</label>
+                                    <label class="label">Mensaje (*)</label>
                                     <div class="control">
-                                        <textarea class="textarea" placeholder="Escribe tu consulta aquí..." required></textarea>
+                                        <textarea class="textarea" id="comentarioContacto" maxlength="500" placeholder="Escribe tu consulta aquí..."></textarea>
                                     </div>
+                                    <p class="help is-danger" id="errComentarioContacto"></p>
                                 </div>
 
                                 <div class="field mt-5">
@@ -56,6 +59,6 @@
     <footer id="footer"></footer>
 
     <script src="../scripts/header-footer.js"></script>
-    <script src="../scripts/validaciones.js"></script>
+    <script src="../scripts/contacto.js"></script>
 </body>
 </html>
